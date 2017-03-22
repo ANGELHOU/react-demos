@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MyTitle from './App';
+import RepoList from './App';
 import './index.css';
+import $ from 'jquery';
 var test = "123";
 console.log(test);
 ReactDOM.render(
-    <MyTitle />,
+    <RepoList promise={$.get('https://api.github.com/search/repositories?q=javascript&sort=stars')} />,
   document.getElementById('root')
 );
